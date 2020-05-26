@@ -12,6 +12,11 @@ const vm = new Vue({
         })
     }
   },
+  filters: {
+    numeroPreco (valor) {
+      return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})
+    }
+  },
   created () {
     this.fetchProdutos()
   }
