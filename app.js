@@ -5,7 +5,8 @@ const vm = new Vue({
     produto: false,
     carrinho: [],
     mensagemAlerta: 'Item Adicionado',
-    alertaAtivo: false
+    alertaAtivo: false,
+    carrinhoAtivo: false
   },
   methods: {
     fetchProdutos () {
@@ -29,6 +30,9 @@ const vm = new Vue({
     },
     fecharModal ({ target, currentTarget }) {
       if (target === currentTarget) this.produto = false
+    },
+    clickForaCarrinho ({ target, currentTarget }) {
+      if (target === currentTarget) this.carrinho = false
     },
     adicionarItem () {
       this.produto.estoque--
